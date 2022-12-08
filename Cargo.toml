@@ -12,3 +12,9 @@ anyhow = "1.0.66"
 custom-utils = "0.10.12"
 log = "0.4.17"
 ntex = { version = "0.5", features = ["openssl", "tokio"] }
+
+
+tokio = { version = "1.23.0", features = ["full"]}
+async-native-tls = { version = "0.4", default-features = false, features = [ "runtime-tokio" ] }
+tokio-native-tls = "0.3.0"
+native-tls = "0.2.11"

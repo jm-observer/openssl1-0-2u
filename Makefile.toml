@@ -6,3 +6,20 @@ docker run --rm -it -v %cd%:/root/project -v /opt/cargo/registry:/usr/local/carg
 script = '''
 docker run --rm -it -v %cd%:/root/project -v /opt/cargo/registry:/usr/local/cargo/registry -v /opt/cargo/git:/usr/local/cargo/git openssl1-0-2u:1.65.0 cargo run --bin ntex-connector
 '''
+[tasks.build-window-tokio]
+script = '''
+docker run --rm -it -v %cd%:/root/project -v /opt/cargo/registry:/usr/local/cargo/registry -v /opt/cargo/git:/usr/local/cargo/git openssl1-0-2u:1.65.0 cargo run --bin tokio-connector
+'''
+[tasks.build-window-tokio-async]
+script = '''
+docker run --rm -it -v %cd%:/root/project -v /opt/cargo/registry:/usr/local/cargo/registry -v /opt/cargo/git:/usr/local/cargo/git openssl1-0-2u:1.65.0 cargo run --bin tokio-async-connector
+'''
+[tasks.build-window-async]
+script = '''
+docker run --rm -it -v %cd%:/root/project -v /opt/cargo/registry:/usr/local/cargo/registry -v /opt/cargo/git:/usr/local/cargo/git openssl1-0-2u:1.65.0 cargo run --bin async-connector
+'''
+
+[tasks.build-tokio-async]
+script = '''
+docker run --rm -it -v $(pwd):/root/project -v /opt/cargo/registry:/usr/local/cargo/registry -v /opt/cargo/git:/usr/local/cargo/git openssl1-0-2u:1.65.0 cargo run --bin tokio-async-connector
+'''
